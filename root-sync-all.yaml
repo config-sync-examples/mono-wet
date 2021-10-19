@@ -1,0 +1,20 @@
+# root-sync.yaml
+# If you are using a Config Sync version earlier than 1.7.0,
+# use: apiVersion: configsync.gke.io/v1alpha1
+apiVersion: configsync.gke.io/v1beta1
+kind: RootSync
+metadata:
+  name: root-sync
+  namespace: config-management-system
+spec:
+  sourceFormat: unstructured
+  override:
+    resources:
+    - containerName: "reconciler"
+      memoryLimit: "800Mi"
+  git:
+    repo: https://github.com/config-sync-examples/mono-wet.git
+    revision: HEAD
+    branch: main
+    dir: "configsync"
+    auth: none
