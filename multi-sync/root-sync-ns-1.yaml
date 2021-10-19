@@ -1,0 +1,14 @@
+apiVersion: configsync.gke.io/v1alpha1
+kind: RootSync
+metadata:
+  name: root-sync
+  namespace: config-management-system
+spec:
+  sourceFormat: unstructured
+  git:
+    repo: https://github.com/config-sync-examples/mono-wet.git
+    revision: HEAD
+    branch: main
+    dir: "configsync/namespace-1"
+    auth: none
+

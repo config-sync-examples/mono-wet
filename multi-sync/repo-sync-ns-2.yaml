@@ -1,0 +1,13 @@
+apiVersion: configsync.gke.io/v1alpha1
+kind: RepoSync
+metadata:
+  name: repo-sync
+  namespace: namespace-2
+spec:
+  git:
+    repo: https://github.com/config-sync-examples/mono-wet.git
+    revision: HEAD
+    branch: main
+    dir: "configsync/namespace-2"
+    auth: none
+
