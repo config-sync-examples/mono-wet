@@ -1,5 +1,0 @@
-apiVersion: v1
-kind: ConfigMap
-metadata:
-    name: configmap-121
-    namespace: namespace-2
